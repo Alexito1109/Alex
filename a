@@ -1,0 +1,1417 @@
+package Formularios;
+
+import java.awt.event.ItemEvent;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author PC02
+ */
+public class fmrPrincipal extends javax.swing.JFrame {
+  
+DefaultTableModel reg=new DefaultTableModel();
+ String nombre,cedula,celular,correo;
+         
+String articulos,marca="",talla,color;
+int cantidad=0,producto=0;
+double precio=0,total=0;
+double pu=0,tot=0;
+// Datos de entrada
+    /**
+     * Creates new form fmrPrincipal
+     */
+    public fmrPrincipal() {
+        
+        initComponents();
+        
+    }
+     public String[] talla (String talla){
+     //areglo tipo String
+     String [] tall=new String [5];
+     if(talla.equalsIgnoreCase("Rojos con Negro")){
+          tall[0]="42";
+         tall[1]="34";
+          tall[2]="35";
+          tall[3]="37";
+         tall[4]="40";
+//         impl[5]="Mercurial";
+         
+     }
+       if(talla.equalsIgnoreCase("Celeste con negro")){
+          tall[0]="36";
+         tall[1]="38";
+          tall[2]="42";
+          tall[3]="35";
+         tall[4]="37";
+
+         
+     }
+        if(talla.equalsIgnoreCase("Rosados")){
+          tall[0]="30";
+         tall[1]="32";
+          tall[2]="34";
+          tall[3]="36";
+         tall[4]="40";
+
+         
+     }
+          if(talla.equalsIgnoreCase("Dorados")){
+          tall[0]="34";
+         tall[1]="37";
+          tall[2]="39";
+          tall[3]="42";
+         tall[4]="35";
+
+         
+     }
+     if(talla.equalsIgnoreCase("Negros")){
+         tall[0]="32";
+          tall[1]="35";
+         tall[2]="38";
+         tall[3]="40";
+         tall[4]="30";
+ }
+      if(talla.equalsIgnoreCase("Blancos con amarrillos")){
+         tall[0]="36";
+          tall[1]="37";
+         tall[2]="42";
+         tall[3]="41";
+         tall[4]="38";
+ }
+       if(talla.equalsIgnoreCase("Azul con verde")){
+         tall[0]="34";
+          tall[1]="40";
+         tall[2]="37";
+         tall[3]="39";
+         tall[4]="42";
+ }
+        if(talla.equalsIgnoreCase("Turquesas")){
+         tall[0]="36";
+          tall[1]="38";
+         tall[2]="32";
+         tall[3]="36";
+         tall[4]="38";
+ }
+         if(talla.equalsIgnoreCase("Celestes con blanco")){
+         tall[0]="34";
+          tall[1]="37";
+         tall[2]="38";
+         tall[3]="40";
+         tall[4]="42";
+ }
+      if(talla.equalsIgnoreCase("Rosado y blanco")){
+          tall[0]="36";
+         tall[1]="38";
+         tall[2]="40";
+         tall[3]="35";
+          tall[4]="39";
+ }
+       if(talla.equalsIgnoreCase("Cesleste y rosado")){
+          tall[0]="35";
+         tall[1]="37";
+         tall[2]="38";
+         tall[3]="39";
+          tall[4]="40";
+ }
+        if(talla.equalsIgnoreCase("Verde con negro")){
+          tall[0]="37";
+         tall[1]="39";
+         tall[2]="42";
+         tall[3]="34";
+          tall[4]="36";
+ }
+         if(talla.equalsIgnoreCase("Blanco y negro")){
+          tall[0]="37";
+         tall[1]="35";
+         tall[2]="38";
+         tall[3]="32";
+          tall[4]="30";
+ }
+          if(talla.equalsIgnoreCase("Dorado y blanco")){
+          tall[0]="36";
+         tall[1]="34";
+         tall[2]="38";
+         tall[3]="39";
+          tall[4]="40";
+ }
+       if(talla.equalsIgnoreCase("Gris con Naranja")){
+          tall[0]="34";
+         tall[1]="36";
+         tall[2]="38"; 
+         tall[3]="40";
+ }
+        if(talla.equalsIgnoreCase("Amarillo y blanco")){
+          tall[0]="37";
+         tall[1]="39";
+         tall[2]="34"; 
+         tall[3]="32";
+ }
+         if(talla.equalsIgnoreCase("Dorado y negro")){
+          tall[0]="35";
+         tall[1]="38";
+         tall[2]="30"; 
+         tall[3]="33";
+ }
+          if(talla.equalsIgnoreCase("Azul y cafe")){
+          tall[0]="35";
+         tall[1]="38";
+         tall[2]="36"; 
+         tall[3]="32";
+ }
+        if(talla.equalsIgnoreCase("Verde con blanco")){
+          tall[0]="32";
+          tall[1]="30";
+          tall[2]="40"; 
+         tall[3]="42";
+ }
+          if(talla.equalsIgnoreCase("Amarillo y verde")){
+          tall[0]="38";
+          tall[1]="40";
+          tall[2]="30"; 
+         tall[3]="33";
+ }
+            if(talla.equalsIgnoreCase("Dorado y rojo")){
+          tall[0]="35";
+          tall[1]="38";
+          tall[2]="40"; 
+         tall[3]="34";
+ }
+              if(talla.equalsIgnoreCase("Azul y Violeta")){
+          tall[0]="37";
+          tall[1]="34";
+          tall[2]="31"; 
+         tall[3]="38";
+ }
+         if(talla.equalsIgnoreCase("Amarillo con Naranja")){
+          tall[0]="35";
+          tall[1]="38";
+          tall[2]="40"; 
+          tall[3]="32";
+ }
+          if(talla.equalsIgnoreCase("Gris y blanco")){
+          tall[0]="40";
+          tall[1]="31";
+          tall[2]="36"; 
+          tall[3]="39";
+ }
+           if(talla.equalsIgnoreCase("Dorado y Gris")){
+          tall[0]="40";
+          tall[1]="34";
+          tall[2]="32"; 
+          tall[3]="30";
+ }
+            if(talla.equalsIgnoreCase("Dorado y Gris")){
+          tall[0]="37";
+          tall[1]="30";
+          tall[2]="32"; 
+          tall[3]="39";
+ }
+          if(talla.equalsIgnoreCase("Blanco")){
+          tall[0]="34";
+          tall[1]="36";
+          tall[2]="30"; 
+          tall[3]="30";
+ }
+            if(talla.equalsIgnoreCase("Amarillo")){
+          tall[0]="42";
+          tall[1]="32";
+          tall[2]="38"; 
+          tall[3]="36";
+ }
+              if(talla.equalsIgnoreCase("Dorado")){
+          tall[0]="35";
+          tall[1]="38";
+          tall[2]="40"; 
+          tall[3]="32";
+ }
+                if(talla.equalsIgnoreCase("Azul")){
+          tall[0]="37";
+          tall[1]="34";
+          tall[2]="32"; 
+          tall[3]="39";
+ }
+           if(talla.equalsIgnoreCase("violeta")){
+          tall[0]="35";
+          tall[1]="38";
+          tall[2]="32"; 
+          tall[3]="30";
+ }
+              if(talla.equalsIgnoreCase("Fucsia")){
+          tall[0]="36";
+          tall[1]="32";
+          tall[2]="40 "; 
+          tall[3]="37";
+ }
+                 if(talla.equalsIgnoreCase("Dorado")){
+          tall[0]="36";
+          tall[1]="40";
+          tall[2]="32"; 
+          tall[3]="40";
+ }
+                    if(talla.equalsIgnoreCase("Rosado bb")){
+          tall[0]="32";
+          tall[1]="30";
+          tall[2]="31 "; 
+          tall[3]="37";
+ }
+            if(talla.equalsIgnoreCase("Lila")){
+         tall[0]="34";
+         tall[1]="36";
+          tall[2]="38"; 
+         tall[3]="39";
+ }
+             if(talla.equalsIgnoreCase("Cabe oscuro")){
+         tall[0]="30";
+         tall[1]="32";
+          tall[2]="31"; 
+         tall[3]="29";
+ }
+              if(talla.equalsIgnoreCase("Verde claro")){
+         tall[0]="35";
+         tall[1]="37";
+          tall[2]="39"; 
+         tall[3]="32";
+ }
+               if(talla.equalsIgnoreCase("Camelo")){
+         tall[0]="32";
+         tall[1]="34";
+          tall[2]="35"; 
+         tall[3]="38";
+ }
+             if(talla.equalsIgnoreCase("Cobalto")){
+          tall[0]="32";
+         tall[1]="30";
+         tall[2]="36"; 
+          tall[3]="39";
+ }
+               if(talla.equalsIgnoreCase("Lila con rojo")){
+          tall[0]="31";
+         tall[1]="38";
+         tall[2]="33"; 
+          tall[3]="42";
+ }
+                 if(talla.equalsIgnoreCase("Verde Azuleado")){
+          tall[0]="34";
+         tall[1]="36";
+         tall[2]="32"; 
+          tall[3]="37 ";
+ }
+                   if(talla.equalsIgnoreCase("Verde mar")){
+          tall[0]="36";
+         tall[1]="34";
+         tall[2]="31"; 
+          tall[3]="38";
+ }
+                  if(talla.equalsIgnoreCase("Color crema")){
+          tall[0]="34";
+          tall[1]="32";
+          tall[2]="36"; 
+          tall[3]="38";
+ }
+                  if(talla.equalsIgnoreCase("Vino")){
+          tall[0]="34";
+          tall[1]="32";
+          tall[2]="37"; 
+          tall[3]="39";
+ }
+                   if(talla.equalsIgnoreCase("Marron")){
+          tall[0]="36";
+          tall[1]="39";
+          tall[2]="42"; 
+          tall[3]="40";
+ }
+                   if(talla.equalsIgnoreCase("Lila y marron")){
+          tall[0]="31";
+          tall[1]="30";
+          tall[2]="32"; 
+          tall[3]="38";
+ }
+                   if( talla.equalsIgnoreCase("Violeta claro")){
+           tall[0]="34";
+           tall[1]="36";
+           tall[2]="32"; 
+           tall[3]="33";
+ }
+               if( talla.equalsIgnoreCase("Rojo oscuro")){
+           tall[0]="40";
+           tall[1]="42";
+           tall[2]="32"; 
+           tall[3]="34";
+ }
+               if( talla.equalsIgnoreCase("Cafe claro")){
+           tall[0]="32";
+           tall[1]="30";
+           tall[2]="36"; 
+           tall[3]="35";
+ }
+               if( talla.equalsIgnoreCase("Azul oscuro")){
+           tall[0]="34";
+           tall[1]="33";
+           tall[2]="38"; 
+           tall[3]="40";
+ }
+                if( talla.equalsIgnoreCase("Verde manzana")){
+           tall[0]="31";
+           tall[1]="35";
+           tall[2]="38"; 
+           tall[3]="35";
+ }
+                 if( talla.equalsIgnoreCase("Dorado")){
+           tall[0]="34";
+           tall[1]="30";
+           tall[2]="32"; 
+           tall[3]="35";
+ }
+                  if( talla.equalsIgnoreCase("verde menta")){
+           tall[0]="31";
+           tall[1]="32";
+           tall[2]="35"; 
+           tall[3]="34";
+ }
+                   if( talla.equalsIgnoreCase("Blanco")){
+           tall[0]="36";
+           tall[1]="39";
+           tall[2]="38"; 
+           tall[3]="40";
+ }
+                 if( talla.equalsIgnoreCase("Rosa lirio")){
+           tall[0]="32";
+           tall[1]="31";
+           tall[2]="33"; 
+           tall[3]="35";
+ } 
+                     if( talla.equalsIgnoreCase("Fucsia claro")){
+           tall[0]="34";
+           tall[1]="36";
+           tall[2]="35"; 
+           tall[3]="37";
+ } 
+                       if( talla.equalsIgnoreCase("Rojo")){
+           tall[0]="38";
+           tall[1]="32";
+           tall[2]="30"; 
+           tall[3]="36";
+ } 
+                          if( talla.equalsIgnoreCase("Amarillo")){
+           tall[0]="32";
+           tall[1]="35";
+           tall[2]="38"; 
+           tall[3]="39";
+ } 
+                 if( talla.equalsIgnoreCase("Naranja")){
+           tall[0]="32";
+           tall[1]="35";
+           tall[2]="37 "; 
+           tall[3]="38";
+ }
+                  if( talla.equalsIgnoreCase("blanco")){
+           tall[0]="34";
+           tall[1]="32";
+           tall[2]="38"; 
+           tall[3]="35";
+ }
+                   if( talla.equalsIgnoreCase("Dorado")){
+           tall[0]="32";
+           tall[1]="30";
+           tall[2]="35"; 
+           tall[3]="37";
+ }
+                    if( talla.equalsIgnoreCase("Lima")){
+           tall[0]="32";
+           tall[1]="30";
+           tall[2]="40"; 
+           tall[3]="42";
+ }
+                 if( talla.equalsIgnoreCase("Gris con Menta")){
+           tall[0]="34";
+           tall[1]="32";
+           tall[2]="35"; 
+           tall[3]="36";
+ }
+                   if( talla.equalsIgnoreCase("Amarillo y dorado")){
+           tall[0]="36";
+           tall[1]="34";
+           tall[2]="37"; 
+           tall[3]="38";
+ }
+                     if( talla.equalsIgnoreCase("Blanco y negro")){
+           tall[0]="32";
+           tall[1]="31";
+           tall[2]="38"; 
+           tall[3]="35";
+ }
+                       if( talla.equalsIgnoreCase("Verde y cafe")){
+           tall[0]="32";
+           tall[1]="33";
+           tall[2]="37"; 
+           tall[3]="38";
+ }
+                  if( talla.equalsIgnoreCase("Gris")){
+           tall[0]="34";
+           tall[1]="32";
+           tall[3]="40";
+ }          
+                   if( talla.equalsIgnoreCase("Amarillo")){
+           tall[0]="36";
+           tall[1]="35";
+           tall[3]="37";
+ }          
+                    if( talla.equalsIgnoreCase("Verde")){
+           tall[0]="33";
+           tall[1]="32";
+           tall[3]="36";
+ }          
+                   if( talla.equalsIgnoreCase("cafe")){
+           tall[0]="36";
+          tall[1]="38";
+           tall[2]="39"; 
+          tall[3]="32";
+ }
+                      if( talla.equalsIgnoreCase("rosado")){
+           tall[0]="31";
+          tall[1]="37";
+           tall[2]="31"; 
+          tall[3]="38";
+ }
+                         if( talla.equalsIgnoreCase("negro")){
+           tall[0]="35";
+          tall[1]="40";
+           tall[2]="30"; 
+          tall[3]="36";
+ }
+                            if( talla.equalsIgnoreCase("blanco")){
+           tall[0]="37";
+          tall[1]="39";
+           tall[2]="38"; 
+          tall[3]="32";
+ }
+                 if( talla.equalsIgnoreCase("rojo")){
+           tall[0]="30";
+           tall[1]="34";
+           tall[2]="36"; 
+           tall[3]="38";
+ }
+                  if( talla.equalsIgnoreCase("verde claro")){
+           tall[0]="32";
+           tall[1]="31";
+           tall[2]="36"; 
+           tall[3]="39";
+ }
+                   if( talla.equalsIgnoreCase("naranja")){
+           tall[0]="34";
+           tall[1]="32";
+           tall[2]="37"; 
+           tall[3]="39";
+ }
+                    if( talla.equalsIgnoreCase("gris")){
+           tall[0]="31";
+           tall[1]="39";
+           tall[2]="32"; 
+           tall[3]="37";
+ }
+                 if( talla.equalsIgnoreCase("azul")){
+           tall[0]="31";
+           tall[1]="38";
+           tall[2]="35"; 
+           tall[3]="39";
+ }
+                   if( talla.equalsIgnoreCase("blanco")){
+           tall[0]="36";
+           tall[1]="40";
+           tall[2]="42"; 
+           tall[3]="31";
+ }
+                     if( talla.equalsIgnoreCase("negro")){
+           tall[0]="34";
+           tall[1]="40";
+           tall[2]="32"; 
+           tall[3]="38";
+ }
+                       if( talla.equalsIgnoreCase("cafe")){
+           tall[0]="32";
+           tall[1]="34";
+           tall[2]="36"; 
+           tall[3]="39";
+ }
+                         if(talla.equalsIgnoreCase("Dorado")){
+          tall[0]="36";
+          tall[1]="40";
+          tall[2]="32"; 
+          tall[3]="40";
+      
+ }
+       
+ 
+   return   tall;       
+ }
+     public String[] color (String color){
+     //areglo tipo String
+     String [] col=new String [5];
+     if(color.equalsIgnoreCase("Adidas")){
+          col[0]="Seleccione";
+          col[1]="Rojos con Negro";
+          col[2]="Celeste con negro";
+          col[3]="Rosados";
+          col[4]="Dorados";
+//         impl[5]="Mercurial";
+         
+     }
+     if(color.equalsIgnoreCase("Puma")){
+         col[0]="Negros";
+          col[1]="Blancos con amarrillos";
+          col[2]="Azul con verde";
+          col[3]="Turquesas";
+          col[4]="Celestes con blanco";
+ }
+      if(color.equalsIgnoreCase("Nike")){
+          col[0]="Rosado y blanco";
+         col[1]="Cesleste y rosado";
+          col[2]="Verde con negro";
+          col[3]="Blanco y negro";
+          col[4]="Dorado y blanco";
+ }
+       if(color.equalsIgnoreCase("Raptor")){
+          col[0]="Gris con Naranja";
+          col[1]="Amarillo y blanco";
+          col[2]="Dorado y negro"; 
+          col[3]="Azul y cafe";
+ }
+        if(color.equalsIgnoreCase("LM10")){
+          col[0]="Ver de con blanco ";
+          col[1]="Amarillo y verde";
+          col[2]="Dorado y rojo"; 
+          col[3]="Azul y Violeta";
+ }
+         if(color.equalsIgnoreCase("UEFA")){
+          col[0]="Amarillocon Naranja";
+          col[1]="Gris y blanco";
+          col[2]="Dorado y Gris"; 
+          col[3]="Azul y Verde";
+ }
+          if(color.equalsIgnoreCase("League")){
+          col[0]="Blanco ";
+          col[1]="Amarillo ";
+          col[2]="Dorado "; 
+          col[3]="Azul ";
+ }
+           if(color.equalsIgnoreCase("Supreme")){
+          col[0]="violeta ";
+          col[1]="Fucsia";
+          col[2]="Dorado "; 
+          col[3]="Rosado bb";
+ }
+            if(color.equalsIgnoreCase("Gucci")){
+          col[0]="Lila";
+          col[1]="Cabe oscuro";
+          col[2]="Verde claro"; 
+          col[3]="Camelo";
+ }
+             if(color.equalsIgnoreCase("Dlc1")){
+          col[0]="Cobalto";
+          col[1]="Lila con rojo";
+          col[2]="Verde Azuleado"; 
+          col[3]="Verde mar ";
+ }
+              if(color.equalsIgnoreCase("Prorunner")){
+          col[0]="Color crema";
+          col[1]="Vino";
+          col[2]="Marron"; 
+          col[3]="Lila y marron";
+ }
+               if(color.equalsIgnoreCase("Giroud")){
+          col[0]="Violeta claro";
+          col[1]="Rojo oscuro";
+          col[2]="Cafe claro"; 
+          col[3]="Azul oscuro";
+ }
+                if(color.equalsIgnoreCase("Bishou")){
+          col[0]="Verde manzana ";
+          col[1]="Dorado";
+          col[2]="verde menta"; 
+          col[3]="Blanco";
+ }
+                 if(color.equalsIgnoreCase("Plabyc")){
+          col[0]="Rosalirio";
+          col[1]="Fucsia claro";
+          col[2]="Rojo"; 
+          col[3]="Amarillllo";
+ } 
+                 if(color.equalsIgnoreCase("Spporting")){
+          col[0]="GNaranja";
+          col[1]="blanco";
+          col[2]="Dorado "; 
+          col[3]="Lima";
+ }
+                 if(color.equalsIgnoreCase("Kings")){
+          col[0]="Gris con Menta";
+          col[1]="Amarillo y dorado";
+          col[2]="Blanco y negro"; 
+          col[3]="Verde y cafe";
+ }
+                  if(color.equalsIgnoreCase("Atlethic")){
+          col[0]="Gris";
+          col[1]="Amarillo";
+          col[3]="Verde";
+ }          
+                 if(color.equalsIgnoreCase("Rmp")){
+          col[0]="cafe";
+          col[1]="rosado";
+          col[2]="negro"; 
+          col[3]="blanco";
+ }
+                 if(color.equalsIgnoreCase("Tape Wrap")){
+          col[0]="rojo";
+          col[1]="verde claro";
+          col[2]="naranja"; 
+          col[3]="gris";
+ }
+                 if(color.equalsIgnoreCase("Ab Tape")){
+          col[0]="azul";
+          col[1]="blanco";
+          col[2]="negro"; 
+          col[3]="cafe";
+ }
+      
+ 
+       
+ 
+   return  col;       
+ }
+ public String[] implementos (String implementos){
+     //areglo tipo String
+     String [] impl=new String [5];
+     if(implementos.equalsIgnoreCase("Pupos")){
+         impl[0]="Seleccione";
+         impl[1]="Adidas";
+         impl[2]="Puma";
+         impl[3]="Nike";
+         impl[4]="Raptor";
+//         impl[5]="Mercurial";
+         
+     }
+     if(implementos.equalsIgnoreCase("Canilleras")){
+         impl[0]="Mercurial";
+         impl[1]="Adidas";
+         impl[2]="Puma";
+         impl[3]="Nike";
+         impl[4]="LM10";
+ }
+      if(implementos.equalsIgnoreCase("Guantes")){
+         impl[0]="Nike";
+         impl[1]="UEFA";
+         impl[2]="League";
+         impl[3]="Supreme";
+         impl[4]="Gucci";
+ }
+       if(implementos.equalsIgnoreCase("Licras")){
+         impl[0]="Dlce1";
+         impl[1]="Prorunner";
+         impl[2]="Giroud"; 
+         impl[3]="Puma";
+ }
+       if(implementos.equalsIgnoreCase("M Recortadas")){
+         impl[0]="Bishou";
+         impl[1]="Plabyc";
+         impl[2]="Spporting"; 
+         impl[3]="Kings"; 
+ }
+        if(implementos.equalsIgnoreCase("Tape")){
+         impl[0]="Atlethic";
+         impl[1]="Rmp";
+         impl[2]="Tape Wrap";  
+         impl[3]="Ab Tape"; 
+ }
+    return impl;       
+ }
+           
+           
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        tbbPrincipal = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
+        btnreg = new javax.swing.JButton();
+        lblimprimir = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        btnRegcliente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cmbArticulos = new javax.swing.JComboBox<>();
+        txtCantidad = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        cmbMarca = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        cmbColor = new javax.swing.JComboBox<>();
+        cmbTalla = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDatos = new javax.swing.JTable();
+        btnRegistrotbl = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtaFactura = new javax.swing.JTextArea();
+        btnFacturar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tbbPrincipal.setBackground(java.awt.Color.green);
+
+        jPanel1.setBackground(java.awt.Color.yellow);
+        jPanel1.setForeground(new java.awt.Color(153, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel1.setText("Apellidos y Nombres:");
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel2.setText("Cedula:");
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel3.setText("Celular:");
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
+        txtCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelularActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel4.setText("Correo electronico:");
+
+        btnreg.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        btnreg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-actualizar-50.png"))); // NOI18N
+        btnreg.setText("Nuevo");
+        btnreg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/futbol.png"))); // NOI18N
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vargas fc.png"))); // NOI18N
+
+        btnRegcliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-accept-67.png"))); // NOI18N
+        btnRegcliente.setText("Procesar");
+        btnRegcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegclienteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(445, 445, 445)
+                .addComponent(lblimprimir, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+                .addGap(243, 243, 243))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnreg, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)
+                                .addComponent(btnRegcliente))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(702, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel12)
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10)
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRegcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnreg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(331, 331, 331)
+                .addComponent(lblimprimir)
+                .addContainerGap(890, Short.MAX_VALUE))
+        );
+
+        tbbPrincipal.addTab("Registro de Jugadores", jPanel1);
+
+        jPanel2.setBackground(java.awt.Color.green);
+
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel5.setText("Producto:");
+
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        jLabel6.setText("Cantidad:");
+
+        cmbArticulos.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        cmbArticulos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Pupos", "Canilleras", "Guantes", "Licras", "M Recortadas", "Tape", " " }));
+        cmbArticulos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbArticulosItemStateChanged(evt);
+            }
+        });
+        cmbArticulos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbArticulosActionPerformed(evt);
+            }
+        });
+
+        btnAceptar.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check-removebg-preview (1).png"))); // NOI18N
+        btnAceptar.setText("Procesar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Marca:");
+
+        cmbMarca.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmbMarca.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbMarcaItemStateChanged(evt);
+            }
+        });
+        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMarcaActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/soccersports_futbo_13301.png"))); // NOI18N
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/deprte_1-removebg-preview.png"))); // NOI18N
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setText("Color:");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Talla:");
+
+        cmbColor.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbColorItemStateChanged(evt);
+            }
+        });
+        cmbColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbColorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel7)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(cmbTalla, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel15)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(cmbColor, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmbArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(805, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(cmbArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(cmbColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(cmbTalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(42, 42, 42)
+                        .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1401, Short.MAX_VALUE))
+        );
+
+        tbbPrincipal.addTab("Compras de Articulos ", jPanel2);
+
+        jPanel3.setBackground(java.awt.Color.cyan);
+
+        tblDatos.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Jugador", "Posicion", "Estatura", "Peso", "A.Deportivo", "Cantidad", "Marca", "Color", "Talla ", "P.unitario", "T. pago"
+            }
+        ));
+        jScrollPane1.setViewportView(tblDatos);
+
+        btnRegistrotbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-accept-67.png"))); // NOI18N
+        btnRegistrotbl.setText("Registrar");
+        btnRegistrotbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrotblActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrotbl)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRegistrotbl, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1465, Short.MAX_VALUE))
+        );
+
+        tbbPrincipal.addTab("Registros", jPanel3);
+
+        jPanel4.setBackground(java.awt.Color.blue);
+
+        txtaFactura.setColumns(20);
+        txtaFactura.setRows(5);
+        jScrollPane2.setViewportView(txtaFactura);
+
+        btnFacturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check-removebg-preview (1).png"))); // NOI18N
+        btnFacturar.setText("Facturar");
+        btnFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(btnFacturar)))
+                .addContainerGap(734, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnFacturar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1268, Short.MAX_VALUE))
+        );
+
+        tbbPrincipal.addTab("Facturas", jPanel4);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tbbPrincipal)
+                .addGap(575, 575, 575))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(tbbPrincipal)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void cmbArticulosActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {                                           
+//declarar variables.
+    
+cantidad=Integer.parseInt(txtCantidad.getText());
+producto=cmbArticulos.getSelectedIndex();
+marca=cmbMarca.getSelectedItem().toString();
+color=cmbColor.getSelectedItem().toString();
+talla=cmbTalla.getSelectedItem().toString();
+//Metodos. Estructura selecctiva
+//switch(marca){
+//    case "Seleccione":
+//        JOptionPane.showMessageDialog(rootPane,"Seleccione un producto");
+//       
+//            break;
+//    case "Adidas":
+//        marca="Adidas";
+//        
+//        
+//        break;
+//        case "Nike":
+//        marca="Nike";
+//        
+//        break;
+//        case "Puma":
+//        marca="Puma";
+//        break;
+//        
+//        default:
+//            JOptionPane.showMessageDialog(rootPane,"producto no disponible");
+//        
+//    
+//}txtMarca.setText(""+marca);
+
+
+switch(producto){
+    case 0:
+        JOptionPane.showMessageDialog(rootPane,"Seleccione un producto");
+       
+            break;
+    case 1:
+        articulos="Pupos";
+        pu=30.00;
+        total=cantidad*30.00;
+        
+        break;
+        case 2:
+        articulos="Canilleras";
+        pu=5.00;
+        total=cantidad*5.00;
+        
+        break;
+        case 3:
+        articulos="Guantes";
+        pu=25.00;
+        total=cantidad*25.00;
+        
+        break;
+        case 4:
+            pu=15.00;
+        articulos="Licras";
+        total=cantidad*15.00;
+        
+        break;
+        case 5:
+            articulos="M Recortadas";
+            pu=10.00;
+            total=cantidad*10.00;
+            break;
+            case 6:
+            articulos="Tape";
+            pu=3.00;
+            total=cantidad*3.00;
+            break;
+        default:
+            JOptionPane.showMessageDialog(rootPane,"producto no disponible");
+        
+    
+}
+//txtArticulo1.setText(" "+producto);
+//txtTotal.setText(" "+total+"$");
+cmbArticulos.setSelectedIndex(0);
+txtCantidad.setText("");
+//txtMarca.setText("");
+
+        // TODO add your handling code here:
+    }                                          
+
+    private void btnRegistrotblActionPerformed(java.awt.event.ActionEvent evt) {                                               
+
+reg=(DefaultTableModel)this.tblDatos.getModel();  
+reg.insertRow(reg.getRowCount(), new Object[]{nombre,cedula,celular,correo
+        ,articulos,cantidad,marca,color,talla,pu,total,
+}); 
+
+// TODO add your handling code here:
+    }                                              
+
+    private void btnregActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        //Declarar variables
+//      
+ 
+        txtNombre.setText("");
+        txtCedula.setText("");
+        txtCelular.setText("");
+        txtCorreo.setText("");
+    }                                      
+
+    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void btnRegclienteActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    
+        nombre=txtNombre.getText();
+        cedula=txtCedula.getText();
+        celular=txtCelular.getText();
+        correo=txtCorreo.getText();
+        JOptionPane.showMessageDialog(rootPane, "Datos guardados");
+    }                                             
+
+    private void cmbArticulosItemStateChanged(java.awt.event.ItemEvent evt) {                                              
+        // Cargar marca segun dispositivo seleccionado:
+        if(evt.getStateChange()==ItemEvent.SELECTED){
+            if(this.cmbArticulos.getSelectedIndex()>0){
+                this.cmbMarca.setModel(new DefaultComboBoxModel(this.implementos(this.cmbArticulos.getSelectedItem().toString())));
+                
+            }
+            
+        }
+    }                                             
+
+    private void cmbMarcaItemStateChanged(java.awt.event.ItemEvent evt) {                                          
+        // TODO add your handling code here:
+        if(evt.getStateChange()==ItemEvent.SELECTED){
+            if(this.cmbMarca.getSelectedIndex()>0){
+                this.cmbColor.setModel(new DefaultComboBoxModel(this.color(this.cmbMarca.getSelectedItem().toString())));
+                
+            }
+            
+        }
+    }                                         
+
+    private void cmbColorItemStateChanged(java.awt.event.ItemEvent evt) {                                          
+        // TODO add your handling code here:
+        if(evt.getStateChange()==ItemEvent.SELECTED){
+            if(this.cmbColor.getSelectedIndex()>0){
+                this.cmbTalla.setModel(new DefaultComboBoxModel(this.talla(this.cmbColor.getSelectedItem().toString())));
+                
+            }
+            
+        }
+    }                                         
+
+    private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnFacturarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        txtaFactura.setText("::::::::::::::::::F A C T U R A:::::::::::::::::"
+        +"\n::::::::::::::::DATOS DEL CLIENTE::::::::::::::::::::::::::"
+        +"\nCliente:"+nombre
+        +"\nCedula:"+cedula
+        +"\nCelular:"+celular
+        +"\nColor"+correo
+        +"\n::::::::::::::::DATOS DE LA COMPRA:::::::::::::::::::::::::"
+        +"\nArticulo "+" \nCantidad "+" \nMarca "+" \nColor "+" \nTalla "+" \nP.Unitario "+" \nTotal"
+        +"\n   "+articulos +""+cantidad +""
+        );
+    }                                           
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(fmrPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(fmrPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(fmrPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(fmrPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new fmrPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnFacturar;
+    private javax.swing.JButton btnRegcliente;
+    private javax.swing.JButton btnRegistrotbl;
+    private javax.swing.JButton btnreg;
+    private javax.swing.JComboBox<String> cmbArticulos;
+    private javax.swing.JComboBox<String> cmbColor;
+    private javax.swing.JComboBox<String> cmbMarca;
+    private javax.swing.JComboBox<String> cmbTalla;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblimprimir;
+    private javax.swing.JTabbedPane tbbPrincipal;
+    private javax.swing.JTable tblDatos;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCelular;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextArea txtaFactura;
+    // End of variables declaration                   
+}
